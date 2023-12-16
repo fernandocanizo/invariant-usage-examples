@@ -1,41 +1,33 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Invariant Usage Examples" },
+    { name: "description", content: "A simple Remix app to see epicweb-dev/invariant in action" },
   ];
 };
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+    <main>
+      <h1><code>@epic-web/invariant</code> usage examples</h1>
+      <h2>(flc development branch)</h2>
+
       <ul>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
+          <Link to="/unhandled-invariant">Unhandled <code>invariant</code></Link>
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
+          <Link to="/invariant"><code>invariant</code></Link>
         </li>
         <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
+          <Link to="/invariant-response"><code>invariantResponse</code></Link>
+        </li>
+        <li>
+          <Link to="/invariant-response-with-options"><code>invariantResponse</code> with options</Link>
         </li>
       </ul>
-    </div>
+    </main>
   );
 }
